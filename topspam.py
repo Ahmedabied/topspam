@@ -7,7 +7,7 @@ try:
         "Accept": "*/*","Accept-Language": "en-US,en;q=0.5","Accept-Encoding": "gzip, deflate, br","Referer": url,"X-Requested-With": "XMLHttpRequest",
         "Content-Type": "application/x-www-form-urlencoded; charset=utf-8","Connection": "keep-alive",
         }
-    ip = [{'http':'http://'+str(i.split("\n")[0])} for i in open("tools/proxy.list")]
+    ip = [{'http':'http://'+str(i.split("\n")[0])} for i in open("proxy.list")]
     def sendmsg(url,msg,proxy,count):
         token,num,id,name=[re.findall(r'"([^"]*)"',i)[0] for i in re.findall("value.*",requests.get(url).text)]
         data={
